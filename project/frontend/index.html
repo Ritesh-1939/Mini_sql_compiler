@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SQL Compiler Dashboard</title>
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <button onclick="showSection('querySection')">SQL Query</button>
+        <button onclick="showSection('tokenSection')">Tokenization</button>
+        <button onclick="showSection('intermediateSection')">Intermediate & Optimization</button>
+        <button onclick="showSection('parseSection')">Parse Tree</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+
+        <header>
+            <h1>SQL Compiler Dashboard</h1>
+        </header>
+
+        <main>
+
+            <!-- SQL Query Input Section -->
+            <div class="card section" id="querySection">
+                <h2>Enter SQL Query</h2>
+                <input type="text" id="sqlQuery" placeholder="Enter SQL Query" autocomplete="off">
+                <div style="margin-top: 10px;">
+                    <button type="button" onclick="executeQuery()">Run Query</button>
+                    <button type="button" onclick="resetDashboard()">Reset</button>
+                </div>
+                <div id="queryResult" style="margin-top: 20px;"></div>
+            </div>
+
+            <!-- Tokenization Section -->
+            <div class="card section" id="tokenSection" style="display: none;">
+                <h2>Tokenization Animation</h2>
+                <button type="button" onclick="animateTokens()">Start Animation</button>
+                <div id="tokenBlock">
+                    <div id="animatedTokens"></div>
+                </div>
+                <div id="tokenLegend" style="margin-top: 20px;">
+                    <h3>Token Colors:</h3>
+                    <span class="legend-box" style="background-color: blue;"></span> Keyword
+                    <span class="legend-box" style="background-color: green; margin-left: 20px;"></span> Symbol
+                    <span class="legend-box" style="background-color: black; color: white; margin-left: 20px;"></span> Identifier / Value
+                </div>
+            </div>
+
+            <!-- Intermediate & Optimization Section -->
+            <div class="card section" id="intermediateSection" style="display: none;">
+                <h2>Intermediate Code Animation</h2>
+                <button type="button" onclick="animateIntermediateCode()">Start Intermediate Animation</button>
+                <div id="intermediateBlock" class="animation-block"></div>
+
+                <h2 style="margin-top: 30px;">Optimization Suggestions Animation</h2>
+                <button type="button" onclick="animateOptimizationSuggestions()">Start Optimization Animation</button>
+                <div id="optimizationBlock" class="animation-block"></div>
+            </div>
+
+            <!-- Parse Tree Section -->
+            <div class="card section" id="parseSection" style="display: none;">
+                <h2>Parse Tree</h2>
+                <button type="button" onclick="loadParseTree()">Load Parse Tree</button>
+                <div id="mermaid"></div>
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{
+    "children": [
+        {
+            "name": "SELECT"
+        },
+        {
+            "children": [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "age"
+                }
+            ],
+            "name": "COLUMNS"
+        },
+        {
+            "name": "FROM"
+        },
+        {
+            "name": "students"
+        }
+    ],
+    "name": "SELECT_QUERY"
+}
